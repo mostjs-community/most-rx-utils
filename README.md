@@ -1,6 +1,6 @@
 # most-package-seed
 
-A starter kit for a most/core package.
+A starter kit for a [most/core](https://github.com/mostjs/core) package.
 
 ## What it does out of the box
 
@@ -10,8 +10,8 @@ A starter kit for a most/core package.
 
 ## How to use
 
-1. Clone the repo.
-2. Edit git remote.
+1. Clone (or fork) the repo.
+2. If you clone, don’t forget to change the git remote.
 3. Edit `package.json` (don’t forget to rename the package and remove `"private": true`).
 4. Edit `README.md` for good measure.
 5. You’re ready to code.
