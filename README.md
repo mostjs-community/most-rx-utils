@@ -11,9 +11,10 @@ A starter kit for a most/core package.
 ## How to use
 
 1. Clone the repo.
-2. Edit `package.json` (don’t forget to rename the package and remove `"private": true`).
-3. Edit `README.md` for good measure.
-4. You’re ready to code.
+2. Edit git remote.
+3. Edit `package.json` (don’t forget to rename the package and remove `"private": true`).
+4. Edit `README.md` for good measure.
+5. You’re ready to code.
 
 ## What it lacks
 
