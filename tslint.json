@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "tslint-config-standard"
+  ],
+  "rules": {
+    "no-use-before-declare": false,
+    "semicolon": [true, "never"]
+  }
+}
