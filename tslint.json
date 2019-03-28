@@ -4,6 +4,10 @@
   ],
   "rules": {
     "no-use-before-declare": false,
-    "semicolon": [true, "never"]
+    "no-unused-variable": null,
+    "no-trailing-whitespace": false,
+    "one-variable-per-declaration": false,
+    "semicolon": [true, "always"],
+    "space-before-function-paren": false
   }
 }
