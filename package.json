@@ -20,9 +20,9 @@
     "most",
     "mostjs",
     "reactive",
-    "event",
-    "async",
-    "stream"
+    "rxjs",
+    "reactivex",
+    "utils"
   ],
   "scripts": {
     "build": "npm run build:commonjs && npm run build:es2015 && npm run build:umd",
