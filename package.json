@@ -58,7 +58,8 @@
   },
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "lib.es2015"
   ],
   "peerDependencies": {
     "@most/core": "^1.2.3"
