@@ -6,7 +6,8 @@
     "sourceMap": true,
     "target": "es5",
     "module": "commonjs",
-    "outDir": "../lib"
+    "outDir": "../lib",
+    "skipLibCheck": true,
   },
   "exclude": [
     "../**/*.test.ts"
