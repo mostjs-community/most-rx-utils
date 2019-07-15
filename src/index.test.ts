@@ -75,7 +75,7 @@ describe('most-rx-utils', function(){
   it('Should emit buffers of sequential values gathered during a given time', function(done){
     this.timeout(10000);
     
-    let expectedOutput = [[0, 1, 2],[3, 4, 5, 6],[7, 8, 9, 10]];
+    let expectedOutput = [[0, 1, 2],[3, 4, 5, 6, 7],[8, 9, 10, 11]];
     let computedOutput: any[] = [];
 
     runEffects(take(3,
@@ -91,7 +91,7 @@ describe('most-rx-utils', function(){
   it('Should emit buffers of overlapping sequential values gathered during a given time', function(done){
     this.timeout(12000);
 
-    let expectedOutput = [[0, 1, 2], [1, 2, 3, 4, 5], [3, 4, 5, 6, 7]];
+    let expectedOutput = [[0, 1, 2, 3], [1, 2, 3, 4, 5], [3, 4, 5, 6, 7]];
     let computedOutput: any[] = [];
 
     runEffects(take(3,
