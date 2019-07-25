@@ -36,8 +36,8 @@
     "test:unit": "./node_modules/.bin/mocha -r ts-node/register --exit src/*.test.ts"
   },
   "dependencies": {
-    "@most/adapter": "^1.0.0",
     "@most/prelude": "^1.7.3",
+    "most-subject": "^6.0.0",
     "most-last": "^2.1.0"
   },
   "devDependencies": {

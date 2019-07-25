@@ -6,9 +6,10 @@ import {
   filter, scan, constant, skip, periodic, continueWith, map,
   multicast, merge, chain, during, at, until, loop, now, tap, sample
 } from '@most/core';
+const { newDefaultScheduler, currentTime } = require('@most/scheduler');
 import { last } from 'most-last';
 import { curry2, curry3 } from '@most/prelude';
-import { createAdapter } from '@most/adapter';
+import { create, event, end } from 'most-subject';
 
 const isDate = (value: any) => value instanceof Date;
 
@@ -77,6 +78,9 @@ const bufferTime = curry3((period: number,
     return chain(_ => last(mainStream), periodic(creationInterval));
   } else {
 
+    const [sink, subjectStream] = create();
+    const scheduler = newDefaultScheduler();
+
     let bufferState = {
       streamClosed: false,
       buffer: [] as any
@@ -89,19 +93,18 @@ const bufferTime = curry3((period: number,
       continueWith(() => filter((x: any) => x,
         tap(_ => bufferState.streamClosed = true, now(undefined))), stream));
 
-    const [induce, events] = createAdapter();
-
     let interval = setInterval(() => {
-      induce({});
+      event(currentTime(scheduler), undefined, sink);
     }, period);
 
     return tap(_ => {
       if (bufferState.streamClosed) {
         clearInterval(interval);
+        end(currentTime(scheduler), sink);
       } else {
         bufferState.buffer = [];
       }
-    }, sample(stream2, events));
+    }, sample(stream2, subjectStream));
   }
 });
 
