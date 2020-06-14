@@ -29,7 +29,6 @@
     "build:commonjs": "./node_modules/.bin/tsc -P cfg/tsconfig.commonjs.json",
     "build:es2015": "./node_modules/.bin/tsc -P cfg/tsconfig.es2015.json",
     "build:umd": "rollup -c --name mostRxUtils && uglifyjs dist/most-rx-utils.js -o dist/most-rx-utils.min.js",
-    "install": "npm run build",
     "prepublish": "npm run build",
     "preversion": "npm run build",
     "test": "npm run test:lint && npm run test:unit",
@@ -52,13 +51,18 @@
     "rollup": "^0.58.2",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript2": "^0.13.0",
-    "ts-node": "^6.0.0",
+    "ts-node": "^8.10.2",
     "tslint": "^5.9.1",
     "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.9.2",
+    "typescript": "^3.9.5",
     "uglify-js": "^3.5.2"
   },
   "peerDependencies": {
     "@most/core": "^1.2.3"
-  }
+  },
+  "files": [
+    "dist",
+    "lib",
+    "lib.es2015"
+  ]
 }
