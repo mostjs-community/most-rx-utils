@@ -30,8 +30,8 @@
     "build:es2015": "./node_modules/.bin/tsc -P cfg/tsconfig.es2015.json",
     "build:umd": "rollup -c --name mostRxUtils && uglifyjs dist/most-rx-utils.js -o dist/most-rx-utils.min.js",
     "install": "npm run build",
-    "prepublish": "npm run build && npm run test",
-    "preversion": "npm run build && npm run test",
+    "prepublish": "npm run build",
+    "preversion": "npm run build",
     "test": "npm run test:lint && npm run test:unit",
     "test:lint": "./node_modules/.bin/tslint -p tsconfig.json -c tslint.json src/*.ts",
     "test:unit": "./node_modules/.bin/mocha -r ts-node/register --exit src/*.test.ts"
